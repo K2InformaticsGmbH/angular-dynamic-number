@@ -18,6 +18,8 @@ It works also when you set in controller your model value (with dot) and if you 
 There is also filter for one directional binding (ngBind). It round fraction part to fixed number of digits. Round method can be select from
 Math.round, Math.ceil and Math.floor. It can show comma or dot as decimal separator.
 
+Filters can reuse strategies.
+
 It even allow to dynamically change directive properties. Just set them as models. 
 
 It is also React version available [React Dynamic Number](https://github.com/uhlryk/react-dynamic-number)
@@ -35,7 +37,7 @@ It is also React version available [React Dynamic Number](https://github.com/uhl
 - filter with comma/dot separator and congurable number of fraction digits
 - filter with thousand separator
 - keeps cursor position
-- custom strategies
+- custom strategies for directive and filer
 - allow add currency (single character) 
 - allow to dynamically change directive properties
 
@@ -104,7 +106,7 @@ If true then number has thousand separator.
 
 **num-thousand-sep**:
 
-Set thousand separator (dot or comma or space) (enable if num-thousand = true, by default if num-sep equal dot then thousand separator is comma).
+Set thousand separator (dot or comma or space or apostrophe) (enable if num-thousand = true, by default if num-sep equal dot then thousand separator is comma).
 If you want to set separator as space remember that angular by default trim spaces. You can as value set "{{' '}}"
 
 **num-prepend**
@@ -197,7 +199,7 @@ If true then number has thousand separator.
 
 **numThousandSep**
 
-Set thousand separator (dot or comma or space).
+Set thousand separator (dot or comma or space or apostrophe).
 
 **numPrepend**
 
@@ -208,6 +210,14 @@ Allow to set single character prepend currency e.g. $1234.12. Html could have pr
 
 Allow to set single character append currency e.g. 1234.12€. Html could have problem with show some characters. In those situations you should set currency as html entit.
 € = `&#x20AC;`
+
+## Filter with strategies
+
+    {{ expression | awnum:strategy}}
+
+**strategy**
+
+This is name of strategy
 
 ## ngTrim and spaces
 
